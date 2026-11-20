@@ -24,11 +24,18 @@ class TipoEmpleado extends TipoCliente {
   }
 }
 
+class TipoMayorista extends TipoCliente {
+  aplicarDescuento(monto) {
+    return monto * 0.85;
+  }
+}
+
 // Variaciones protegidas: agregar un tipo nuevo solo cambia este archivo.
 const TIPOS = {
   normal: new TipoNormal(),
   frecuente: new TipoFrecuente(),
   empleado: new TipoEmpleado(),
+  mayorista: new TipoMayorista(),
 };
 
 // Igual que el codigo heredado: un tipo no registrado se cobra como normal.

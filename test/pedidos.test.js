@@ -51,3 +51,12 @@ import { test } from "node:test";
       })
     );
   });
+  
+  test("cliente mayorista (reto)", () => {
+  const r = procesarPedido({
+    cliente: "Comercial Norte",
+    tipoCliente: "mayorista",
+    productos: [{ nombre: "Termo", precio: 400, cantidad: 2 }],
+  });
+  assert.strictEqual(r.total, 788.8);
+});
